@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "author": "Damir Dorofeev",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 48.6, "left": -595.8, "attrs": {} },
+    {
+      "type": "wokwi-neopixel-canvas",
+      "id": "neopixels1",
+      "top": -224.3,
+      "left": -548.8,
+      "rotate": 270,
+      "attrs": { "rows": "8", "cols": "8", "matrixBrightness": "63" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": -41.8,
+      "left": -460.8,
+      "attrs": { "color": "yellow" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn2",
+      "top": -41.8,
+      "left": -537.6,
+      "attrs": { "color": "yellow" }
+    }
+  ],
+  "connections": [
+    [ "neopixels1:DIN", "uno:8", "green", [ "v19.2", "h249.6", "v322.2" ] ],
+    [
+      "neopixels1:VDD",
+      "uno:5V",
+      "red",
+      [ "v9.6", "h100.6", "v57.6", "h9.6", "v163.2", "h-115.2" ]
+    ],
+    [ "neopixels1:VSS", "uno:GND.1", "black", [ "v19.2", "h211.2", "v317.2" ] ],
+    [ "uno:GND.1", "btn1:2.l", "black", [ "h-268.5", "v-125" ] ],
+    [ "uno:GND.1", "btn2:2.l", "black", [ "h-431.7", "v-125" ] ],
+    [ "btn2:1.r", "uno:2", "green", [ "v0" ] ],
+    [ "btn1:1.r", "uno:3", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
